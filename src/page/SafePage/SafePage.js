@@ -23,11 +23,9 @@ export default class SafePage extends Component {
             });
         })
 
-        let login = {
-            login: localStorage.getItem("login")
-        }
+        let login = localStorage.getItem("login")
 
-        fetch(`http://localhost:3000/updateMoney${login ? `?login=${localStorage.getItem("login")}` : ''}`)
+        fetch(`http://localhost:3000/updateMoney${login ? `?login=${login}` : ''}`)
         .then(res => res.json())
         .then(data => {
             this.setState({ accumulation: data.allMoney });
@@ -40,21 +38,23 @@ export default class SafePage extends Component {
     clickAddSumm = () => {
         let { input } = this.state;
         this.setState( { accumulation: (input * 0.15).toFixed(2) }, () => {
-            // let UpdateAllMoney = {
-            //     allMoney: accumulation,
-            //     login: localStorage.getItem('login')
-            // }
+            let { accumulation } = this.state; 
 
-            // fetch('http://localhost:3000/update', {
-            // method: "PUT",
-            // headers: {
-            //     "Content-type": "application/json",
-            // },
-            // body: JSON.stringify(UpdateAllMoney)
-            // })
-            // .catch((err) => {
-            //     alert(err)
-            // })
+            let UpdateAllMoney = {
+                allMoney: accumulation,
+                login: localStorage.getItem('login')
+            }
+
+            fetch('http://localhost:3000/update', {
+            method: "PUT",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(UpdateAllMoney)
+            })
+            .catch((err) => {
+                alert(err)
+            })
         });
     }
 

@@ -38,23 +38,24 @@ export default class ZeroPage extends Component {
     }
 
     clickAddSumm = () => {
-        let { input } = this.state;
-        this.setState( { accumulation: (input % 100) }, () => {
-            // let UpdateAllMoney = {
-            //     allMoney: accumulation,
-            //     login: localStorage.getItem('login')
-            // }
+        let { input, accumulation } = this.state;
+        this.setState( { accumulation: +accumulation + (input % 100) }, () => {
+            let { accumulation } = this.state;
+            let UpdateAllMoney = {
+                allMoney: accumulation,
+                login: localStorage.getItem('login')
+            }
 
-            // fetch('http://localhost:3000/update', {
-            // method: "PUT",
-            // headers: {
-            //     "Content-type": "application/json",
-            // },
-            // body: JSON.stringify(UpdateAllMoney)
-            // })
-            // .catch((err) => {
-            //     alert(err)
-            // })
+            fetch('http://localhost:3000/update', {
+            method: "PUT",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(UpdateAllMoney)
+            })
+            .catch((err) => {
+                alert(err)
+            })
         });
     }
 
