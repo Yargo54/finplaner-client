@@ -11,7 +11,7 @@ export default class LoginPage extends Component{
             login: data.get('login'),
             password: data.get('password')
         }
-        fetch('http://localhost:3000/login', {
+        fetch('https://finplanner-api.herokuapp.com/login', {
             method: "POST",
             headers: {
                 "Content-type": "application/json",

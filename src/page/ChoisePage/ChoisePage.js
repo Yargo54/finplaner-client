@@ -20,7 +20,7 @@ export default class ChoisePage extends Component {
             nameSchema: "./convert",
             allMoney: 0
         }
-        fetch('http://localhost:3000/reqister', {
+        fetch('https://finplanner-api.herokuapp.com/reqister', {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -40,7 +40,7 @@ export default class ChoisePage extends Component {
             nameSchema: "./jug",
             allMoney: 0
         }
-        fetch('http://localhost:3000/reqister', {
+        fetch('https://finplanner-api.herokuapp.com/reqister', {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -60,7 +60,7 @@ export default class ChoisePage extends Component {
             nameSchema: "./safe",
             allMoney: 0
         }
-        fetch('http://localhost:3000/reqister', {
+        fetch('https://finplanner-api.herokuapp.com/reqister', {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -80,7 +80,7 @@ export default class ChoisePage extends Component {
             nameSchema: "./zero",
             allMoney: 0
         }
-        fetch('http://localhost:3000/reqister', {
+        fetch('https://finplanner-api.herokuapp.com/reqister', {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -100,7 +100,7 @@ export default class ChoisePage extends Component {
             nameSchema: "./latte",
             allMoney: 0
         }
-        fetch('http://localhost:3000/reqister', {
+        fetch('https://finplanner-api.herokuapp.com/reqister', {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -120,7 +120,7 @@ export default class ChoisePage extends Component {
             nameSchema: "./fifty-thirty-twenty",
             allMoney: 0
         }
-        fetch('http://localhost:3000/reqister', {
+        fetch('https://finplanner-api.herokuapp.com/reqister', {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -134,7 +134,7 @@ export default class ChoisePage extends Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:3000/accumulation")
+        fetch("https://finplanner-api.herokuapp.com/accumulation")
         .then(res => res.json())
         .then(data => {
             data.forEach(element => {

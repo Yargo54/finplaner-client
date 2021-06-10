@@ -17,7 +17,7 @@ export default class JugPage extends Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:3000/accumulation")
+        fetch("https://finplanner-api.herokuapp.com/accumulation")
         .then(res => res.json())
         .then(data => {
             data.forEach(element => {
@@ -33,7 +33,7 @@ export default class JugPage extends Component {
             login: localStorage.getItem("login")
         }
 
-        fetch(`http://localhost:3000/updateMoney${login ? `?login=${localStorage.getItem("login")}` : ''}`)
+        fetch(`https://finplanner-api.herokuapp.com/updateMoney${login ? `?login=${localStorage.getItem("login")}` : ''}`)
         .then(res => res.json())
         .then(data => {
             this.setState({ accumulation: data.allMoney });
@@ -66,7 +66,7 @@ export default class JugPage extends Component {
                 login: localStorage.getItem('login')
             }
 
-            fetch('http://localhost:3000/update', {
+            fetch('https://finplanner-api.herokuapp.com/update', {
             method: "PUT",
             headers: {
                 "Content-type": "application/json",

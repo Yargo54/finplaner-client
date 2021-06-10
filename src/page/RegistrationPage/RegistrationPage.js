@@ -24,7 +24,7 @@ export default class RegistrationPage extends Component{
             //     name: data.get('name')
             // }
     
-            // fetch('http://localhost:3000/users', {
+            // fetch('https://finplanner-api.herokuapp.com/users', {
             //     method: "POST",
             //     headers: {
             //         "Content-type": "application/json",
@@ -35,7 +35,7 @@ export default class RegistrationPage extends Component{
             //     alert(err)
             // })
     
-            // fetch('http://localhost:3000/reqister', {
+            // fetch('https://finplanner-api.herokuapp.com/reqister', {
             //     method: "POST",
             //     headers: {
             //         "Content-type": "application/json",
@@ -45,7 +45,7 @@ export default class RegistrationPage extends Component{
             // .catch((err) => {
             //     alert(err)
             // })
-            
+
             let login = data.get('login');
             let password = data.get('password');
             localStorage.setItem('login', login);
