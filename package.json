@@ -1,5 +1,5 @@
 {
-  "name": "finplanner-client",
+  "name": "finplaner-client",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AleksandrAVK/finplanner-client.git"
+    "url": "git+https://github.com/AleksandrAVK/finplaner-client.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AleksandrAVK/finplanner-client/issues"
+    "url": "https://github.com/AleksandrAVK/finplaner-client/issues"
   },
-  "homepage": "https://github.com/AleksandrAVK/finplanner-client#readme",
+  "homepage": "https://github.com/AleksandrAVK/finplaner-client#readme",
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.4",
