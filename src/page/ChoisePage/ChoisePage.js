@@ -10,30 +10,96 @@ export default class ChoisePage extends Component {
         shortSafe: '',
         shortZero: '',
         shortLatte: '',
-        short50_30_20: '',
+        short50_30_20: ''
     }
 
     clickConvert = () => {
+        let programm = {
+            login: localStorage.getItem('login'),
+            password: localStorage.getItem('password'),
+            nameSchema: "./convert",
+            allMoney: 0
+        }
+        fetch('http://localhost:3000/reqister', {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(programm)
+        })
+        .catch((err) => {
+            alert(err)
+        })
         this.props.history.push("./convert")
     }
 
     clickJug = () => {
+        fetch('http://localhost:3000/reqister', {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(registration)
+        })
+        .catch((err) => {
+            alert(err)
+        })
         this.props.history.push("./jug")
     }
 
     clickSafe = () => {
+        fetch('http://localhost:3000/reqister', {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(registration)
+        })
+        .catch((err) => {
+            alert(err)
+        })
         this.props.history.push("./safe")
     }
 
     clickZero = () => {
+        fetch('http://localhost:3000/reqister', {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(registration)
+        })
+        .catch((err) => {
+            alert(err)
+        })
         this.props.history.push("./zero")
     }
 
     clickLatte = () => {
+        fetch('http://localhost:3000/reqister', {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(registration)
+        })
+        .catch((err) => {
+            alert(err)
+        })
         this.props.history.push("./latte")
     }
 
     clickFiftyThirtyTwenty = () => {
+        fetch('http://localhost:3000/reqister', {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(registration)
+        })
+        .catch((err) => {
+            alert(err)
+        })
         this.props.history.push("./fifty-thirty-twenty")
     }
 

@@ -18,11 +18,15 @@ export default class LoginPage extends Component{
             },
             body: JSON.stringify(loginAndPassword)
         })
+        .then(res => res.json())
+        .then((data) => {
+            this.props.history.push(data.user.nameSchema);
+        })
         .catch((error) => {
             alert("Неправильный логин или пароль!", error); //TODO: should refactor this 
         })
     }
-    //this.props.history.push("/choise");
+    
 
     render() {
         return(

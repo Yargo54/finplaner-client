@@ -20,37 +20,36 @@ export default class RegistrationPage extends Component{
         if(data.get('name') === '' || data.get('login') === '' || data.get('password') === '' || isActive !== true){
             alert('Не все поля заполненны!');
         } else {
-            let user = {
-                name: data.get('name')
-            }
+            // let user = {
+            //     name: data.get('name')
+            // }
     
-            let registration = {
-                login: data.get('login'),
-                password: data.get('password')
-            }
+            // fetch('http://localhost:3000/users', {
+            //     method: "POST",
+            //     headers: {
+            //         "Content-type": "application/json",
+            //     },
+            //     body: JSON.stringify(user)
+            // })
+            // .catch((err) => {
+            //     alert(err)
+            // })
     
-            fetch('http://localhost:3000/users', {
-                method: "POST",
-                headers: {
-                    "Content-type": "application/json",
-                },
-                body: JSON.stringify(user)
-            })
-            .catch((err) => {
-                alert(err)
-            })
-    
-            fetch('http://localhost:3000/reqister', {
-                method: "POST",
-                headers: {
-                    "Content-type": "application/json",
-                },
-                body: JSON.stringify(registration)
-            })
-            .catch((err) => {
-                alert(err)
-            })
-    
+            // fetch('http://localhost:3000/reqister', {
+            //     method: "POST",
+            //     headers: {
+            //         "Content-type": "application/json",
+            //     },
+            //     body: JSON.stringify(registration)
+            // })
+            // .catch((err) => {
+            //     alert(err)
+            // })
+            
+            let login = data.get('login');
+            let password = data.get('password');
+            localStorage.setItem('login', login);
+            localStorage.setItem('password', password);
             alert('Регистрация прошла успешно!');
             this.props.history.push("/choise");
         }

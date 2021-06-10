@@ -24,14 +24,33 @@ export default class ConvertPage extends Component {
                         break;
                 }
             });
+        });
+
+        let login = {
+            login: localStorage.getItem("login")
+        }
+
+        fetch(`http://localhost:3000/updateMoney${login ? `?login=${localStorage.getItem("login")}` : ''}`)
+        .then(res => res.json())
+        .then(data => {
+            this.setState({ accumulation: data.allMoney });
         })
+        .catch((err) => {
+            alert(err)
+        })
+    }
+
+    componentWillUnmount(){
+        this.setState( { accumulation: 0 } )
     }
      
     clickAddSumm = () => {
         let { input, accumulation } = this.state;
+        console.log(input, accumulation)
 
         this.setState( { accumulation: (+accumulation + input).toFixed(2) }, () => {
             let { accumulation } = this.state;
+            console.log(accumulation)
             let financialGoals =  (+accumulation * 0.1).toFixed(2);
             let mandatorySpending =  (+accumulation * 0.55).toFixed(2)
 
@@ -39,12 +58,24 @@ export default class ConvertPage extends Component {
                 financialGoals,
                 mandatorySpending,
                 convert: ((+accumulation - (+financialGoals + +mandatorySpending)) / 4).toFixed(2)
-            } );
-        } );
+            });
 
-        
-        
-        
+            let UpdateAllMoney = {
+                allMoney: accumulation,
+                login: localStorage.getItem('login')
+            }
+
+            fetch('http://localhost:3000/update', {
+            method: "PUT",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(UpdateAllMoney)
+            })
+            .catch((err) => {
+                alert(err)
+            })
+        });
     }
 
     updateInputValue = (event) => {
