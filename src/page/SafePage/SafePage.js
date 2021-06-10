@@ -7,7 +7,7 @@ export default class SafePage extends Component {
     state = {
         longSafe: '',
         input: null,
-        save: 0,
+        accumulation: 0,
     }
 
     componentDidMount() {
@@ -22,11 +22,40 @@ export default class SafePage extends Component {
                 }
             });
         })
+
+        let login = {
+            login: localStorage.getItem("login")
+        }
+
+        fetch(`http://localhost:3000/updateMoney${login ? `?login=${localStorage.getItem("login")}` : ''}`)
+        .then(res => res.json())
+        .then(data => {
+            this.setState({ accumulation: data.allMoney });
+        })
+        .catch((err) => {
+            alert(err)
+        })
     }
 
     clickAddSumm = () => {
         let { input } = this.state;
-        this.setState( { save: (input * 0.15).toFixed(2) } );
+        this.setState( { accumulation: (input * 0.15).toFixed(2) }, () => {
+            // let UpdateAllMoney = {
+            //     allMoney: accumulation,
+            //     login: localStorage.getItem('login')
+            // }
+
+            // fetch('http://localhost:3000/update', {
+            // method: "PUT",
+            // headers: {
+            //     "Content-type": "application/json",
+            // },
+            // body: JSON.stringify(UpdateAllMoney)
+            // })
+            // .catch((err) => {
+            //     alert(err)
+            // })
+        });
     }
 
     updateInputValue = (event) => {
@@ -34,7 +63,7 @@ export default class SafePage extends Component {
     }
 
     render() {
-        let { longSafe, input, save } = this.state
+        let { longSafe, input, accumulation } = this.state
         return(
             <div className="div-main-safe">
                 <div>
@@ -52,7 +81,7 @@ export default class SafePage extends Component {
                     </div> */}
                     <div className="total-amount-safe">
                         <h3 className="h3-convert">Ваши накопления</h3>
-                        <p className="p-convert-summ">{save} руб.</p>
+                        <p className="p-convert-summ">{accumulation} руб.</p>
                     </div>
                 </div>
             </div>

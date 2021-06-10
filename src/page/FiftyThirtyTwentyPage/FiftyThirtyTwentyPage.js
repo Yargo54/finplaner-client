@@ -25,6 +25,19 @@ export default class FiftyThirtyTwentyPage extends Component {
                 }
             });
         })
+
+        let login = {
+            login: localStorage.getItem("login")
+        }
+
+        fetch(`http://localhost:3000/updateMoney${login ? `?login=${localStorage.getItem("login")}` : ''}`)
+        .then(res => res.json())
+        .then(data => {
+            this.setState({ accumulation: data.allMoney });
+        })
+        .catch((err) => {
+            alert(err)
+        })
     }
 
     clickAddSumm = () => {
@@ -38,8 +51,23 @@ export default class FiftyThirtyTwentyPage extends Component {
                 financialGoals,
                 mandatorySpending,
                 save,
-            } );
-        } );
+            });
+            // let UpdateAllMoney = {
+            //     allMoney: accumulation,
+            //     login: localStorage.getItem('login')
+            // }
+
+            // fetch('http://localhost:3000/update', {
+            // method: "PUT",
+            // headers: {
+            //     "Content-type": "application/json",
+            // },
+            // body: JSON.stringify(UpdateAllMoney)
+            // })
+            // .catch((err) => {
+            //     alert(err)
+            // })
+        });
     }
 
     updateInputValue = (event) => {

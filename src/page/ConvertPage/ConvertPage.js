@@ -46,11 +46,9 @@ export default class ConvertPage extends Component {
      
     clickAddSumm = () => {
         let { input, accumulation } = this.state;
-        console.log(input, accumulation)
 
         this.setState( { accumulation: (+accumulation + input).toFixed(2) }, () => {
             let { accumulation } = this.state;
-            console.log(accumulation)
             let financialGoals =  (+accumulation * 0.1).toFixed(2);
             let mandatorySpending =  (+accumulation * 0.55).toFixed(2)
 

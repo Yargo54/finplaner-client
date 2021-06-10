@@ -34,12 +34,18 @@ export default class ChoisePage extends Component {
     }
 
     clickJug = () => {
+        let programm = {
+            login: localStorage.getItem('login'),
+            password: localStorage.getItem('password'),
+            nameSchema: "./jug",
+            allMoney: 0
+        }
         fetch('http://localhost:3000/reqister', {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
             },
-            body: JSON.stringify(registration)
+            body: JSON.stringify(programm)
         })
         .catch((err) => {
             alert(err)
@@ -48,12 +54,18 @@ export default class ChoisePage extends Component {
     }
 
     clickSafe = () => {
+        let programm = {
+            login: localStorage.getItem('login'),
+            password: localStorage.getItem('password'),
+            nameSchema: "./safe",
+            allMoney: 0
+        }
         fetch('http://localhost:3000/reqister', {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
             },
-            body: JSON.stringify(registration)
+            body: JSON.stringify(programm)
         })
         .catch((err) => {
             alert(err)
@@ -62,12 +74,18 @@ export default class ChoisePage extends Component {
     }
 
     clickZero = () => {
+        let programm = {
+            login: localStorage.getItem('login'),
+            password: localStorage.getItem('password'),
+            nameSchema: "./zero",
+            allMoney: 0
+        }
         fetch('http://localhost:3000/reqister', {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
             },
-            body: JSON.stringify(registration)
+            body: JSON.stringify(programm)
         })
         .catch((err) => {
             alert(err)
@@ -76,12 +94,18 @@ export default class ChoisePage extends Component {
     }
 
     clickLatte = () => {
+        let programm = {
+            login: localStorage.getItem('login'),
+            password: localStorage.getItem('password'),
+            nameSchema: "./latte",
+            allMoney: 0
+        }
         fetch('http://localhost:3000/reqister', {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
             },
-            body: JSON.stringify(registration)
+            body: JSON.stringify(programm)
         })
         .catch((err) => {
             alert(err)
@@ -90,12 +114,18 @@ export default class ChoisePage extends Component {
     }
 
     clickFiftyThirtyTwenty = () => {
+        let programm = {
+            login: localStorage.getItem('login'),
+            password: localStorage.getItem('password'),
+            nameSchema: "./fifty-thirty-twenty",
+            allMoney: 0
+        }
         fetch('http://localhost:3000/reqister', {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
             },
-            body: JSON.stringify(registration)
+            body: JSON.stringify(programm)
         })
         .catch((err) => {
             alert(err)
