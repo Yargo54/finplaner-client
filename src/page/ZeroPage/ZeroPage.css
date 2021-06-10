@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+
+.div-main-zero{
+    font-family: 'Roboto', sans-serif;
+    width: 900px;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    background: linear-gradient(to right bottom, rgba(36, 28, 28, 0.5), rgba(56, 17, 129, 0.5));  
+}
+
+.div-with-summ{
+    display: flex;
+    width: 550px;
+    margin: auto;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.h1-zero{
+    color: white;
+    font-size: 45px;
+    padding-top: 20px;
+}
+
+.p-long-description-zero{
+  color: white;
+  font-size: 20px;
+  width: 800px;
+  margin: auto
+}
+
+.div-button-summ{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.h3-convert{
+    margin-bottom: 0px;
+    color: white;
+}
+
+.p-convert-summ{
+    margin-top: 0px;
+    color: white;
+}
+
+.input-add-summ{
+    width: 300px;
+    height: 45px;
+    border: none;
+    padding: 0 15px;
+    margin: 5px 0 15px;
+    border-width: 0;
+    line-height: 40px;
+    border-radius: 20px;
+    color: white;
+    background: rgba(255, 255, 255, .2);
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+.button-add-summ{
+    margin-right: 10px;
+    margin-left: 65px;
+}
+.button-add-summ {
+  text-decoration: none;
+  display: inline-block;
+  padding: 20px 30px;
+  margin: 10px 20px;
+  position: relative;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, .4);
+  background: none;
+  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.button-add-summ:before, .button-add-summ:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  box-sizing: border-box;
+}
+.button-add-summ:before {
+  bottom: 0;
+  left: 0;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  transition: 0s ease opacity .8s, .2s ease width .4s, .2s ease height .6s;
+}
+.button-add-summ:after {
+  top: 0;
+  right: 0;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  transition: 0s ease opacity .4s, .2s ease width, .2s ease height .2s;
+}
+.button-add-summ:hover:before, 
+.button-add-summ:hover:after {
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+}
+.button-add-summ:hover:before {
+  transition: 0s ease opacity 0s, .2s ease height, .2s ease width .2s;
+}
+.button-add-summ:hover:after {
+  transition: 0s ease opacity .4s, .2s ease height .4s, .2s ease width .6s;
+}
+.button-add-summ:hover {
+  background: rgba(255, 255, 255, .2);
+}
+
+.total-amount-zero{
+    background-color: white;
+    background: linear-gradient(to right bottom, rgba(80, 49, 49, 0.5), rgba(150, 29, 150, 0.5));  
+    width: 230px;
+    margin-left: 150px;
+}
+
+.div-distribution{
+    background-color: white;
+    background: linear-gradient(to right bottom, rgba(80, 49, 49, 0.5), rgba(150, 29, 150, 0.5));  
+    width: 270px;
+}

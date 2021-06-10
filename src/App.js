@@ -1,50 +1,33 @@
 import React, { Component } from 'react';
-import  ReactDOM  from 'react-dom';
-import MainPage from './pages/MainPages'
-import RegistrationPage from "./pages/RegistrationPage";
-import LogPage from "./pages/LogPage";
-import ForgotPasswordPage from "./pages/ForgotPasswordPage";
-import AccumulationProgramPage from "./pages/AccumulationProgramPage";
 import {  Route  } from 'react-router-dom';
-import ChoiseProgram from "./pages/ChoiseProgram"
 
-import '../src/index.css';
+import MainPage from "./page/MainPage/MainPage";
+import RegistrationPage from "./page/RegistrationPage/RegistrationPage";
+import LoginPage from "./page/LoginPage/LoginPage";
+import ChoisePage from "./page/ChoisePage/ChoisePage";
+import ConvertPage from "./page/ConvertPage/ConvertPage";
+import JugPage from "./page/JugPage/JugPage";
+import SafePage from "./page/SafePage/SafePage";
+import ZeroPage from "./page/ZeroPage/ZeroPage";
+import LattePage from "./page/LattePage/LattePage";
+import FiftyThirtyTwentyPage from "./page/FiftyThirtyTwentyPage/FiftyThirtyTwentyPage"
 
-class App extends Component {
+export default class App extends Component {
     render() {
-      return (
-        <div className="app">
-          <Route path="/" exact component={MainPage} />
-          <Route path="/registration" exact component={RegistrationPage} />
-          <Route path="/login" exact component={LogPage} />
-          <Route path="/forgotpassword" exact component={ForgotPasswordPage} />
-          <Route path="/accumulationprogramconvert">
-            <AccumulationProgramPage name="Четыре конверта"/>
-          </Route>
-          <Route path="/accumulationprogramjug">
-            <AccumulationProgramPage name="Шесть кувшинов"/>
-          </Route>
-          <Route path="/accumulationprogramsafe">
-            <AccumulationProgramPage name="Сейф"/>
-          </Route>
-          <Route path="/accumulationprogramzeroing">
-            <AccumulationProgramPage name="Обнуление"/>
-          </Route>
-          <Route path="/accumulationprogramlatte">
-            <AccumulationProgramPage name="Эффект латте"/>
-          </Route>
-          <Route path="/accumulationprogrampopular">
-            <AccumulationProgramPage name="50/30/20"/>
-          </Route>
-
-          <Route path="/choise" exact component={ChoiseProgram} />
-          {/* <Route path="/schema/:id" exact component={SchemaPage} />
-          <Route path="/schema/:id" exact component={SchemaPage} />
-          <Route path="/schema/:id" exact component={SchemaPage} />  */}
+        return (
+        <div>
+            <Route path="/" exact component={MainPage} />
+            <Route path="/register" exact component={RegistrationPage} />
+            <Route path="/login" exact component={LoginPage} />
+            <Route path="/choise" exact component={ChoisePage} />
+            <Route path="/convert" exact component={ConvertPage} />
+            <Route path="/jug" exact component={JugPage} />
+            <Route path="/safe" exact component={SafePage} />
+            <Route path="/zero" exact component={ZeroPage} />
+            <Route path="/latte" exact component={LattePage} />
+            <Route path="/fifty-thirty-twenty" exact component={FiftyThirtyTwentyPage} />
         </div>
-      );
+        );
     }
-  }
-  
-  export default App;
+}
   

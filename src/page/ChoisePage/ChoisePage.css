@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+
+.main-div-choise{
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    background: linear-gradient(to right bottom, rgba(80, 49, 49, 0.5), rgba(150, 29, 150, 0.5));  
+    width: 1200px;
+    margin: auto;
+}
+
+.h1-choise{
+    text-align: center;
+    padding-top: 20px;
+    color: white;
+}
+
+.button-convert{
+    width: 155px;
+    height: 110px;
+    background: url("./image/Конверт.png") no-repeat;
+    background-size: 150px;
+    background-position: center;
+    border: none;
+    outline: none;
+}
+
+.button-jug{
+    width: 86px;
+    height: 110px;
+    background: url("./image/Шесть_кувшинов.png") no-repeat;
+    background-size: 160px;
+    background-position: center;
+    border: none;
+    outline: none;
+}
+
+.button-safe{
+    width: 100px;
+    height: 110px;
+    background: url("./image/Сейф.png") no-repeat;
+    background-size: 135px;
+    background-position: center;
+    border: none;
+    outline: none;
+}
+
+.button-zero{
+    width: 90px;
+    height: 110px;
+    background: url("./image/Обнуление.png") no-repeat;
+    background-size: 93px;
+    background-position: center;
+    border: none;
+    outline: none;
+}
+
+.button-latte{
+    width: 120px;
+    height: 110px;
+    background: url("./image/Латте.png") no-repeat;
+    background-size: 140px;
+    background-position: center;
+    border: none;
+    outline: none;
+}
+
+.button-fifty-thirty-twenty{
+    width: 165px;
+    height: 110px;
+    background: url("./image/50_30_20.png") no-repeat;
+    background-size: 150px;
+    background-position: center;
+    border: none;
+    outline: none;
+}
+
+.div-container{
+    display: flex;
+    justify-content: space-between;
+    width: 910px;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.div-convert, .div-jug, .div-safe, .div-zero, .div-latte, .div-fifty-thirty-twenty{
+    text-align: center;
+}
+
+.div-convert, .div-zero{
+    margin-left: -40px;
+    margin-right: 55px;
+}
+
+.div-safe {
+    margin-right: -60px;
+}
+
+.div-jug{
+    margin-right: 45px;
+}
+
+.div-latte{
+    margin-right: 45px;
+}
+
+.div-fifty-thirty-twenty{
+    margin-right: -130px;
+}
+
+.p-name{
+    color: white;
+    font-size: 27px;
+}
+
+.p-description{
+    color:white;
+    font-size: 15px;
+}
