@@ -40,7 +40,20 @@ export default class ConvertPage extends Component {
         fetch(`https://finplanner-api.herokuapp.com/updateMoney${login ? `?login=${login}` : ''}`)
         .then(res => res.json())
         .then(data => {
-            this.setState({ accumulation: data ? data.allMoney : 0 });
+            this.setState({ accumulation: data ? data.allMoney : 0 }, () => {
+                let { accumulation } = this.state;
+                let financialGoals =  (+accumulation * 0.1).toFixed(2);
+                let mandatorySpending =  (+accumulation * 0.55).toFixed(2)
+
+                this.setState( {
+                    financialGoals,
+                    mandatorySpending,
+                    convert1: ((+accumulation - (+financialGoals + +mandatorySpending)) / 4).toFixed(2),
+                    convert2: ((+accumulation - (+financialGoals + +mandatorySpending)) / 4).toFixed(2),
+                    convert3: ((+accumulation - (+financialGoals + +mandatorySpending)) / 4).toFixed(2),
+                    convert4: ((+accumulation - (+financialGoals + +mandatorySpending)) / 4).toFixed(2),
+                });
+            });
         })
         .catch((err) => {
             alert(err)
