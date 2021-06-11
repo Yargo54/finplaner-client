@@ -20,31 +20,6 @@ export default class RegistrationPage extends Component{
         if(data.get('name') === '' || data.get('login') === '' || data.get('password') === '' || isActive !== true){
             alert('Не все поля заполненны!');
         } else {
-            // let user = {
-            //     name: data.get('name')
-            // }
-    
-            // fetch('https://finplanner-api.herokuapp.com/users', {
-            //     method: "POST",
-            //     headers: {
-            //         "Content-type": "application/json",
-            //     },
-            //     body: JSON.stringify(user)
-            // })
-            // .catch((err) => {
-            //     alert(err)
-            // })
-    
-            // fetch('https://finplanner-api.herokuapp.com/reqister', {
-            //     method: "POST",
-            //     headers: {
-            //         "Content-type": "application/json",
-            //     },
-            //     body: JSON.stringify(registration)
-            // })
-            // .catch((err) => {
-            //     alert(err)
-            // })
 
             let login = data.get('login');
             let password = data.get('password');

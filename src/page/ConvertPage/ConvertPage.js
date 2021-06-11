@@ -34,13 +34,13 @@ export default class ConvertPage extends Component {
                 }
             });
         });
-
+        
         let login = localStorage.getItem("login")
-
+        
         fetch(`https://finplanner-api.herokuapp.com/updateMoney${login ? `?login=${login}` : ''}`)
         .then(res => res.json())
         .then(data => {
-            this.setState({ accumulation: data.allMoney });
+            this.setState({ accumulation: data ? data.allMoney : 0 });
         })
         .catch((err) => {
             alert(err)

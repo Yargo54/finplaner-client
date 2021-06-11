@@ -28,7 +28,7 @@ export default class LattePage extends Component {
         fetch(`https://finplanner-api.herokuapp.com/updateMoney${login ? `?login=${login}` : ''}`)
         .then(res => res.json())
         .then(data => {
-            this.setState({ accumulation: data.allMoney });
+            this.setState({ accumulation: data ? data.allMoney : 0 });
         })
         .catch((err) => {
             alert(err)
