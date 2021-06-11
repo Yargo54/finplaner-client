@@ -261,10 +261,17 @@ export default class ConvertPage extends Component {
         }
     }
 
+    clickHome = () => {
+        this.props.history.push("/")
+    }
+
     render() {
         let { input, financialGoals, mandatorySpending, convert1, convert2, convert3, convert4, accumulation, inputOsnova, inputTarget, inputConvert1, inputConvert2, inputConvert3, inputConvert4 } = this.state 
         return(
             <div className="div-main-convert">
+                <header className="header">
+                    <button className="button-register" onClick={this.clickHome}>Выйти</button>
+                </header>
                 <div>
                     <h1 className="h1-convert">Четыре конверта</h1>
                     <p className="p-long-description-convert">
