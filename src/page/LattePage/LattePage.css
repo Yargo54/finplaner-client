@@ -28,7 +28,16 @@
   color: white;
   font-size: 20px;
   width: 800px;
-  margin: auto
+  margin: auto;
+
+  text-align: justify;
+  background-color: white;
+  background: linear-gradient(to right bottom, rgba(80, 49, 49, 0.5), rgba(150, 29, 150, 0.5));
+  padding: 35px;
+}
+
+.span-latte{
+  margin-bottom: 15px;
 }
 
 .div-button-summ{

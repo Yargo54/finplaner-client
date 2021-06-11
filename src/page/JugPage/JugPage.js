@@ -29,11 +29,9 @@ export default class JugPage extends Component {
             });
         })
 
-        let login = {
-            login: localStorage.getItem("login")
-        }
+        let login = localStorage.getItem("login")
 
-        fetch(`https://finplanner-api.herokuapp.com/updateMoney${login ? `?login=${localStorage.getItem("login")}` : ''}`)
+        fetch(`https://finplanner-api.herokuapp.com/updateMoney${login ? `?login=${login}` : ''}`)
         .then(res => res.json())
         .then(data => {
             this.setState({ accumulation: data.allMoney });
@@ -90,7 +88,17 @@ export default class JugPage extends Component {
             <div className="div-main-jug">
                 <div>
                     <h1 className="h1-jug">Шесть кувшинов</h1>
-                    <p className="p-long-description-jug">{longJug}</p>
+                    <p className="p-long-description-jug">
+                        Метод основан на разделении всего дохода по 6 различным категориям в соотношении 55-10-10-10-10-5.
+                        <ul className="ul-jug">
+                            <li>55% — это основные расходы (коммуналка, машина и т.д.);</li>
+                            <li>10% — это сбережения;</li>
+                            <li>10% — это средства на дорогие покупки, без которых можно обойтись в повседневной жизни или которые служат сравнительно долго и не попадают в категорию «повседневные расходы»;</li>
+                            <li>10% — это ежемесячный бюджет на обучение;</li>
+                            <li>10% — это средства на транжирство, их можно потратить как угодно;</li>
+                            <li>5% — это средства на подарки, а также на благотворительность;</li>
+                        </ul>
+                    </p>
                 </div>
                 <div className="div-button-summ">
                     <button className="button-add-summ" onClick={this.clickAddSumm}>Добавить сумму</button>

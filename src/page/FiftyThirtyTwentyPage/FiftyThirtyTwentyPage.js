@@ -26,11 +26,9 @@ export default class FiftyThirtyTwentyPage extends Component {
             });
         })
 
-        let login = {
-            login: localStorage.getItem("login")
-        }
+        let login = localStorage.getItem("login")
 
-        fetch(`https://finplanner-api.herokuapp.com/updateMoney${login ? `?login=${localStorage.getItem("login")}` : ''}`)
+        fetch(`https://finplanner-api.herokuapp.com/updateMoney${login ? `?login=${login}` : ''}`)
         .then(res => res.json())
         .then(data => {
             this.setState({ accumulation: data ? data.allMoney : 0 });
@@ -80,7 +78,15 @@ export default class FiftyThirtyTwentyPage extends Component {
             <div className="div-main-fifty-thirty-twenty">
                 <div>
                     <h1 className="h1-fifty-thirty-twenty">50/30/20</h1>
-                    <p className="p-long-description-fifty-thirty-twenty">{long50_30_20}</p>
+                    <p className="p-long-description-fifty-thirty-twenty">
+                        Согласно правилу 50/30/20, все доходы, объединенные в семейный бюджет, 
+                        нужно поделить на три части для дальнейшего применения по назначению.
+                        <ul className="ul-50-30-20">
+                            <li>50% - это расходы на оплату базовых и обязательных потребностей.</li>
+                            <li>30% - это lifestyle-расходы. Сюда относится покупка желаемых, но необязательных вещей.</li>
+                            <li>20% - это средства, которые предназначены для накопления сбережений на запланированные крупные покупки, инвестирование и непредвиденные траты.</li>
+                        </ul>
+                    </p>
                 </div>
                 <div className="div-button-summ">
                     <button className="button-add-summ" onClick={this.clickAddSumm}>Добавить сумму</button>

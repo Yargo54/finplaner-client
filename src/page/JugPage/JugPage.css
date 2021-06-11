@@ -28,7 +28,20 @@
   color: white;
   font-size: 20px;
   width: 800px;
-  margin: auto
+  margin: auto;
+
+  text-align: justify;
+  background-color: white;
+  background: linear-gradient(to right bottom, rgba(80, 49, 49, 0.5), rgba(150, 29, 150, 0.5));
+  padding: 35px;
+}
+
+.ul-jug{
+  padding-right: 0px;
+  margin: 0px;
+  padding-left: 20px;
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
 
 .div-button-summ{

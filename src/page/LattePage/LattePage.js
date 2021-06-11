@@ -23,11 +23,9 @@ export default class LattePage extends Component {
             });
         })
 
-        let login = {
-            login: localStorage.getItem("login")
-        }
+        let login = localStorage.getItem("login")
 
-        fetch(`https://finplanner-api.herokuapp.com/updateMoney${login ? `?login=${localStorage.getItem("login")}` : ''}`)
+        fetch(`https://finplanner-api.herokuapp.com/updateMoney${login ? `?login=${login}` : ''}`)
         .then(res => res.json())
         .then(data => {
             this.setState({ accumulation: data.allMoney });
@@ -70,7 +68,13 @@ export default class LattePage extends Component {
             <div className="div-main-latte">
                 <div>
                     <h1 className="h1-latte">Эффект латте</h1>
-                    <p className="p-long-description-latte">{longLatte}</p>
+                    <p className="p-long-description-latte">
+                        <div className="span-latte">Этот знаменитый метод демонстрирует, как можно научиться экономить на мелочах.</div>
+                        <div className="span-latte">Как пользоваться «эффектом латте» для достижения своей финансовой цели?</div>
+                        <div className="span-latte">Очень просто: если вы порывались купить кофе или какую-то другую мелочь, 
+                        без которой можно обойтись, отложите сумму неслучившейся покупки на отдельный счёт.</div> 
+                        <div className="span-latte">Экономя пять раз в неделю по 200 рублей, к концу месяца вы получите больше 4 тысяч.</div>
+                    </p>
                 </div>
                 <div className="div-button-summ">
                     <button className="button-add-summ" onClick={this.clickAddSumm}>Добавить сумму</button>

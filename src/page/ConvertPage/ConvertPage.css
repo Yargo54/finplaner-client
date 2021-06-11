@@ -28,7 +28,24 @@
     color: white;
     font-size: 20px;
     width: 800px;
-    margin: auto
+    margin: auto;
+    
+    text-align: justify;
+    background-color: white;
+    background: linear-gradient(to right bottom, rgba(80, 49, 49, 0.5), rgba(150, 29, 150, 0.5));
+    padding: 35px;
+}
+
+li{
+  padding-bottom: 5px;
+}
+
+.ul-convert{
+  padding-right: 0px;
+  margin: 0px;
+  padding-left: 20px;
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
 
 .div-button-summ{
@@ -37,13 +54,15 @@
 }
 
 .h3-convert{
-    margin-bottom: 0px;
-    color: white;
+  margin-top: 15px;
+  margin-bottom: 0px;
+  color: white;
 }
 
 .p-convert-summ{
     margin-top: 0px;
     color: white;
+    margin-bottom: 5px;
 }
 
 .input-add-summ{
@@ -132,4 +151,56 @@ input::-webkit-inner-spin-button {
     background-color: white;
     background: linear-gradient(to right bottom, rgba(80, 49, 49, 0.5), rgba(150, 29, 150, 0.5));  
     width: 270px;
+}
+.end-button{
+  margin-bottom: 15px;
+}
+.sliding-button {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  position: relative;
+  padding: 5px 15px;
+  margin-top: 10px;
+  border: 1px solid;
+  border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+  border-image-slice: 1;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 2px;
+  transition: .8s cubic-bezier(.165, .84, .44, 1);
+  background-color: #C0C0C0;
+}
+.sliding-button:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 100%;
+  z-index: -1;
+  color: white;
+  background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+  transition: .8s cubic-bezier(.165, .84, .44, 1);
+}
+.sliding-button:hover {
+  background: rgba(255, 255, 255, 0);
+}
+.sliding-button:hover:before {
+  bottom: 0%;
+  top: auto;
+  height: 100%;
+}
+
+.input-spisanye{
+  border: none;
+  outline: none;
+  padding-left: 5px;
+  color: white;
+  font-size: 15px;
+  background-color: rgba(255, 255, 255, .2);
+  height: 20px;
+  margin-top: 5px;
+  width: 106px;
 }

@@ -23,11 +23,9 @@ export default class ZeroPage extends Component {
             });
         })
 
-        let login = {
-            login: localStorage.getItem("login")
-        }
+        let login = localStorage.getItem("login")
 
-        fetch(`https://finplanner-api.herokuapp.com/updateMoney${login ? `?login=${localStorage.getItem("login")}` : ''}`)
+        fetch(`https://finplanner-api.herokuapp.com/updateMoney${login ? `?login=${login}` : ''}`)
         .then(res => res.json())
         .then(data => {
             this.setState({ accumulation: data.allMoney });
@@ -69,7 +67,12 @@ export default class ZeroPage extends Component {
             <div className="div-main-zero">
                 <div>
                     <h1 className="h1-zero">Обнуление</h1>
-                    <p className="p-long-description-zero">{longZero}</p>
+                    <p className="p-long-description-zero">
+                        <div className="span-zero">Суть метода заключается в том, что каждый вечер нужно «обнулять» свои счета и кошельки.</div>
+                        <div className="span-zero">В среднем подойдёт «обнуление» счёта до двух нулей.</div>
+                        <div className="span-zero">Например с 15434 руб. на сбережения уйдут 34 руб.</div>
+                        <div className="span-zero">Если вы забыли обнулить счёт, то на следующий день нужно дополнительно внести в копилку «штраф» — 100 руб.</div>
+                    </p>
                 </div>
                 <div className="div-button-summ">
                     <button className="button-add-summ" onClick={this.clickAddSumm}>Добавить сумму</button>

@@ -68,17 +68,16 @@ export default class SafePage extends Component {
             <div className="div-main-safe">
                 <div>
                     <h1 className="h1-safe">Сейф</h1>
-                    <p className="p-long-description-safe">{longSafe}</p>
+                    <p className="p-long-description-safe">
+                        <div className="span-zero">Этот метод не предусматривает полноценной системы ведения бюджета, а фокусируется только на накоплении.</div>
+                        <div className="span-zero">Следовать ему очень просто - в самом простом варианте с каждого денежного поступления необходимо откладывать по 15% на сбережения.</div>
+                    </p>
                 </div>
                 <div className="div-button-summ">
                     <button className="button-add-summ" onClick={this.clickAddSumm}>Добавить сумму</button>
                     <input type="number" className="input-add-summ" value={input} onChange={this.updateInputValue}/>
                 </div>
                 <div className="div-with-summ">
-                    {/* <div className="div-distribution">
-                        <h3 className="h3-convert">Сбережения</h3>
-                        <p className="p-convert-summ">{save} руб.</p>
-                    </div> */}
                     <div className="total-amount-safe">
                         <h3 className="h3-convert">Ваши накопления</h3>
                         <p className="p-convert-summ">{accumulation} руб.</p>
